@@ -1,0 +1,7 @@
+# Analysis of LRU Cache
+In this exercise we design a Least Recently Used (LRU) cache, which contains two operations: get and put. The get operation returns the value of the key you are searching,
+If it doesn't exist a -1 is returned. The put operation basically inserts a value into the cache. There is an extra caveat that we remove the least recently used entry when the cache memory reaches its limit.
+## Design
+We design the cache using a class with three attributes. One for the capacity, one that holds the least recently used key (implemented as a list) and the cache that is implemented as a dictionary.
+## Time and Space Complexity
+Since the cache is implemented as a dictionary and is used to lookup the value of a key, the lookup operation is O(1) since the the dictionary operates like a hash map. The put operation is more complicated. The put operation depends on whether we have reached the capacity or not. If we haven't we can just set the key to the appropriate value and append the key to the lru list, otherwise if we have exceeded capacity we have to set the key to the value but also pop the first key in the LRU list, and append the new key. This operation is O(1) since setting a key to a value is similar to a hash map. Also, appending and popping the first and last value is O(1), so we end up with two methods (get and set) that are O(1). The space complexity is O(C) where C is the capacity of the cache.
