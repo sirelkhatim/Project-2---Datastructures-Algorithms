@@ -31,3 +31,21 @@ def find_files(suffix,path):
 
 # test with testdir
 print(find_files('.c','testdir'))
+'''
+expected result:
+['testdir/subdir3/subsubdir1/b.c', 'testdir/subdir5/a.c', 'testdir/subdir1/a.c', 'testdir/t1.c']
+'''
+
+# test present directory for .md
+print(find_files('.md', '.'))
+'''
+expected result:
+['./explanation_3.md', './explanation_1.md', './explanation_5.md', './explanation_2.md', './explanation_6.md', './explanation_4.md']
+'''
+
+# test whether function works with half the name of the file
+print(find_files('_6.md','.'))
+'''
+expected result:
+['./explanation_6.md']
+'''

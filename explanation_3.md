@@ -4,7 +4,7 @@ Here we implement huffman coding and decoding.
 
 ## Design
 
-We start off by creating a huffman node that is similar to a vanilla node with an additional attribute for weight (as well as left,right, value as per normal vanilla node). We then create a function to get frequencies of the individual characters. Also, we create two methods one for creating a huffman tree and another for creating a huffman table. We then create a huffman encoding algorithm and huffman decoding algorithm.
+We start off by creating a huffman node that is similar to a vanilla node with an additional attribute for weight (as well as left,right, value as per normal vanilla node). We then create a function to get frequencies of the individual characters. Also, we create two methods one for creating a huffman tree and another for creating a huffman table. We then create a huffman encoding algorithm and huffman decoding algorithm. The inbuilt method heap
 
 ## Time and Space Complexity
 

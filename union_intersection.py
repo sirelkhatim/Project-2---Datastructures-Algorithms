@@ -82,7 +82,7 @@ def intersection(llist_1, llist_2):
     while current_node:
         current_node2 = llist_2.head
         while current_node2:
-            if current_node.value == current_node2.value:
+            if current_node.value == current_node2.value and not_present(new_ll, current_node.value):
                 new_ll.append(current_node.value)
             current_node2 = current_node2.next
         current_node = current_node.next
@@ -128,3 +128,22 @@ print('union')
 print (union(linked_list_3,linked_list_4))
 print('intersection')
 print (intersection(linked_list_3,linked_list_4))
+
+# Test case 3
+
+linked_list_5 = LinkedList()
+linked_list_6 = LinkedList()
+
+element_5 = [11,1,1,1]
+element_6 = [11,1,1,1]
+
+for i in element_5:
+    linked_list_5.append(i)
+
+for i in element_6:
+    linked_list_6.append(i)
+
+print('union')
+print (union(linked_list_5,linked_list_6))
+print('intersection')
+print (intersection(linked_list_5,linked_list_6))
