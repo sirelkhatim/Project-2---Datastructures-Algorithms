@@ -1,17 +1,17 @@
 ### data structure to store key, value, times used
-
+from collections import deque
 
 class LRU_Cache(object):
 
     def __init__(self, capacity):
         # Initialize class variables
         self.cache = {}
-        self.lru = []
+        self.lru = deque()
         self.capacity = capacity
 
     def set_lru_capacity(self):
         if len(self.lru)>self.capacity:
-            self.lru.pop(0)
+            self.lru.popleft()
 
     def get(self, key):
         # Retrieve item from provided key. Return -1 if nonexistent. 
@@ -31,7 +31,7 @@ class LRU_Cache(object):
             self.lru.append(key)
             self.set_lru_capacity()     
         else:
-            key_min_value = self.lru.pop(0)
+            key_min_value = self.lru.popleft()
             self.cache.pop(key_min_value,None)
             self.cache[key] = value
             self.lru.append(key)

@@ -7,4 +7,4 @@ This is a classic recursive algorithm that makes use of a recursive base algorit
 
 ## Time and Space Complexity
 
-The time complexity is exponential O(2^n) where n is the largest number of files in a subdirectory. The space is complexity is O(1), since no value is being stores as such.
+The time complexity is exponential O(d*w) where d is the depth of the folder tree and w is the number of children since the algorithm is a recursive one, it uses a call stack which is effectively like a depth first search tree. The space complexity is O(1), since no value is being stores as such.

@@ -113,7 +113,7 @@ def huffman_decoding(data,tree):
     if data is None:
         return ''
     if (len(get_frequencies(data))) == 1:
-        return len(data)*str(tree.value)
+        return len(data)*str(tree[0].value)
 
     decode = ''
     n = len(data)
@@ -204,4 +204,37 @@ if __name__ == "__main__":
 
     '''
     solution should just be blank as there is nothing to encode
+    '''
+
+    # Test 3
+    print('Test 4...')
+
+    a_great_sentence = "AAAAAAA"
+
+    print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    print ("The content of the data is: {}\n".format(a_great_sentence))
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    #print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print ("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print ("The content of the encoded data is: {}\n".format(decoded_data))
+
+    '''
+    expected result:
+    Test 4...
+    The size of the data is: 56
+
+    The content of the data is: AAAAAAA
+
+    The content of the encoded data is: 0000000
+
+    The size of the decoded data is: 56
+
+    The content of the encoded data is: AAAAAAA
+
     '''

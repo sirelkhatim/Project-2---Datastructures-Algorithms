@@ -27,6 +27,10 @@ def is_user_in_group(user, group):
       user(str): user name/id
       group(class:Group): group to check user membership against
     """
+    if not isinstance(group, Group):
+        return "group entered is not an instance of the Group Class"
+    if user is None:
+        return "No user to look for!"
     in_group = user in group.get_users()
     if in_group:
         return True
@@ -79,3 +83,19 @@ print(is_user_in_group('Mom', group3)) # should be True
 
 print("Cyclical group structure test3: ")
 print(is_user_in_group('Mom', group2)) # should be False
+
+## Test 3: Passing in  no user as an argument
+print(is_user_in_group(user =None, group = group1))
+
+'''
+expected result:
+No user to look for!
+'''
+
+# Test 4: Passing is a argument to group that isn't a group
+print(is_user_in_group('sub_child_user', sub_child_user))
+
+'''
+expected result:
+group entered is not an instance of the Group Class
+'''
